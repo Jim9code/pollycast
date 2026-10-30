@@ -16,7 +16,7 @@
     </div>
 
     <!-- Form -->
-    <form method="POST" action="{{ route('polling-unit.store') }}" class="space-y-6">
+    <form method="POST" action="{{ route('polling-unit.store', [], false) }}" class="space-y-6">
         @csrf
 
         <!-- Step 1: Location & Polling Unit Details -->

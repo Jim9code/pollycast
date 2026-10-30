@@ -23,7 +23,7 @@
         </div>
 
         <!-- Chained Combo Box Form (LGA -> Ward -> Polling Unit) -->
-        <form method="GET" action="{{ route('polling-unit.index') }}" id="chainedForm" class="mt-6 pt-6 border-t border-slate-100">
+        <form method="GET" action="{{ route('polling-unit.index', [], false) }}" id="chainedForm" class="mt-6 pt-6 border-t border-slate-100">
             <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3">
                 Filter by Chained Combo Box (LGA &rarr; Ward &rarr; Polling Unit)
             </p>
@@ -81,7 +81,7 @@
         </form>
 
         <!-- Quick Direct Selector (for fast testing of any Polling Unit) -->
-        <form method="GET" action="{{ route('polling-unit.index') }}" class="mt-4 pt-4 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center gap-3">
+        <form method="GET" action="{{ route('polling-unit.index', [], false) }}" class="mt-4 pt-4 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center gap-3">
             <label for="quick_pu_select" class="text-xs font-medium text-slate-600 shrink-0">
                 Or Quick-Jump to any Polling Unit:
             </label>

@@ -19,7 +19,7 @@
         </div>
 
         <!-- Select Box to Choose Local Government -->
-        <form method="GET" action="{{ route('lga-results.index') }}" class="mt-6 pt-6 border-t border-slate-100 flex flex-col sm:flex-row sm:items-end gap-4">
+        <form method="GET" action="{{ route('lga-results.index', [], false) }}" class="mt-6 pt-6 border-t border-slate-100 flex flex-col sm:flex-row sm:items-end gap-4">
             <div class="flex-1">
                 <label for="lga_id" class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-2">
                     Select Local Government Area (Delta State - ID 25)
