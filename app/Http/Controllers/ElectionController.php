@@ -308,4 +308,18 @@ class ElectionController extends Controller
 
         return response()->json($pollingUnits);
     }
+
+    /**
+     * Hidden Activity Log Dashboard (/activity-logs)
+     * Lets you see whenever an assessor visits or tests the application.
+     */
+    public function activityLogs()
+    {
+        $logs = DB::table('visitor_logs')
+            ->orderByDesc('id')
+            ->limit(200)
+            ->get();
+
+        return view('elections.activity_logs', compact('logs'));
+    }
 }

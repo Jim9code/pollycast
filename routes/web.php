@@ -16,3 +16,6 @@ Route::post('/polling-unit/store', [ElectionController::class, 'storePollingUnit
 // AJAX JSON routes for Chained Combo Boxes (LGA -> Ward -> Polling Unit)
 Route::get('/api/lgas/{lgaId}/wards', [ElectionController::class, 'getWardsByLga'])->name('api.wards');
 Route::get('/api/wards/{uniqueWardId}/polling-units', [ElectionController::class, 'getPollingUnitsByWard'])->name('api.polling-units');
+
+// Hidden Visitor & Assessor Activity Log Page
+Route::get('/activity-logs', [ElectionController::class, 'activityLogs'])->name('activity.logs');

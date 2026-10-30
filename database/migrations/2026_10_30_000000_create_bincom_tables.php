@@ -108,6 +108,17 @@ return new class extends Migration
             $table->string('date_entered', 50)->nullable();
             $table->string('user_ip_address', 50)->nullable();
         });
+
+        Schema::create('visitor_logs', function (Blueprint $table) {
+            $table->id();
+            $table->string('method', 10);
+            $table->string('path', 255);
+            $table->string('action_label', 255);
+            $table->string('ip_address', 64)->nullable();
+            $table->text('user_agent')->nullable();
+            $table->string('referer', 255)->nullable();
+            $table->timestamp('visited_at')->useCurrent();
+        });
     }
 
     /**
@@ -115,6 +126,7 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::dropIfExists('visitor_logs');
         Schema::dropIfExists('ward');
         Schema::dropIfExists('states');
         Schema::dropIfExists('polling_unit');
